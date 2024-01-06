@@ -1,0 +1,58 @@
+version: 1
+build:
+  proto:
+    path: proto
+    third_party_paths:
+    - third_party/proto
+    - proto_vendor
+accounts:
+- name: alice
+  coins:
+  - 2000000000src
+  - 10000000000srg
+- name: bob
+  coins:
+  - 2000000000src
+  - 10000000000srg
+- name: candy
+  coins:
+  - 2000000000src
+  - 10000000000srg
+- name: dodo
+  coins:
+  - 2000000000src
+  - 10000000000srg
+- name: elia
+  coins:
+  - 2000000000src
+  - 10000000000srg
+- name: frank
+  coins:
+  - 2000000000src
+  - 10000000000srg
+faucet:
+  name: bob
+  coins:
+  - 50000src
+  - 100000srg
+  host: 0.0.0.0:4500
+client:
+  vuex:
+    path: vue/src/store
+  openapi:
+    path: docs/static/openapi.yml
+genesis:
+  app_state:
+    mint:
+      params:
+        mint_denom: src
+    staking:
+      params:
+        bond_denom: src
+  chain_id: srspoa
+validator:
+    name: user1
+    staked: "100000000src"
+#validators:
+#- name: alice
+#  bonded: 100000000src
